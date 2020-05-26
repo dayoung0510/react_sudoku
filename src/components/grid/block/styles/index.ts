@@ -12,7 +12,7 @@ export const Container = styled.div`
     flex-basis: 0;
     font-size: 20px;
     font-weight: bold;
-    height: 45px;
+    height: auto;
     justify-content: center;
     transition: ${theme.transition};
     user-select: none;
