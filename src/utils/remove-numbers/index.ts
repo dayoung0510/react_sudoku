@@ -1,11 +1,11 @@
 import global from 'global'
 import { GRID } from 'typings'
-import { copyGrid, getRandomIndex } from 'utils'
+import { copyGrid, getRandomIndex, solveGrid } from 'utils'
 
 /**
  * Removenumbers from a full grid to create a Sudoku puzzle.
  * @param grid 9X9 Sudoku Grid
- * @param attempts numbers of attempts to solve (higer means more defficult -default 5)
+ * @param attempts numbers of attempts to solve (higher means more defficult -default 5)
  */
 
 function removeNumbers(grid: GRID, attempts = 5): GRID {
@@ -23,6 +23,7 @@ function removeNumbers(grid: GRID, attempts = 5): GRID {
 
     const gridCopy = copyGrid(grid)
     global.counter = 0
+    solveGrid(gridCopy)
 
     if (global.counter !== 1) {
       grid[row][col] = backup
